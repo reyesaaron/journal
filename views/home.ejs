@@ -1,0 +1,21 @@
+<%- include("partials/header") -%>
+
+        <h1>Home</h1>
+
+
+<p><%= homeContents %></p>
+
+<%  posts.forEach(post => {     %>  
+<%   const bodyLimit = post.body.substring(0,99) + " ..."; %>  
+    <h1><%= post.title %></h1>
+    <p>
+        <%= bodyLimit  %>
+        <a href="/posts/<%= post.title %>">Read More</a>
+    </p>   
+    
+<%  });                         %>
+
+
+
+
+<%- include("partials/footer") -%>
